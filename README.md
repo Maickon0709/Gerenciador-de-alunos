@@ -1,5 +1,6 @@
-🏋️ Gerenciador de Alunos — Academia
-Sistema simples de gerenciamento de alunos desenvolvido em Python com banco de dados SQLite3, criado como projeto inicial de estudo em Análise e Desenvolvimento de Sistemas.
+🏋️ Gerenciador de Alunos —
+
+Sistema simples de gerenciamento de alunos desenvolvido em Python com banco de dados SQLite3, criado como projeto inicial de estudo sobre banco de dados com python.
 
 💡 Funcionalidades 
 
