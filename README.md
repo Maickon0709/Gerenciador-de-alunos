@@ -1,29 +1,106 @@
-🏋️ Gerenciador de Alunos —
+# Gerenciador de Alunos
 
-Sistema simples de gerenciamento de alunos desenvolvido em Python com banco de dados SQLite3, criado como projeto inicial de estudo sobre banco de dados com python.
+Sistema simples de gerenciamento de alunos desenvolvido em Python utilizando SQLite para armazenamento de dados.
 
-💡 Funcionalidades 
+## Funcionalidades
 
-Cadastrar aluno (nome, idade, plano)
-Listar todos os alunos
-Buscar aluno por nome
-Remover aluno por ID
+* Cadastrar alunos
+* Listar todos os alunos cadastrados
+* Buscar aluno pelo nome
+* Atualizar cadastro de alunos
+* Excluir alunos do banco de dados
 
-🗂️ Estrutura do Projeto
+## Tecnologias Utilizadas
 
-gerenciador-alunos/
-├── main.py       # Menu principal e loop do programa
-├── alunos.py     # Funções de CRUD dos alunos
-├── banco.py      # Conexão com o banco de dados
-└── MeuBanco.db   # Banco de dados SQLite (gerado automaticamente)
+* Python 3
+* SQLite3
 
-▶️ Como executar
+## Estrutura do Projeto
 
-bashpython main.py
+```text
+Gerenciador-de-alunos/
+│
+├── banco.py
+├── alunos.py
+├── menu.py
+├── academia.db
+└── README.md
+```
 
-Nenhuma biblioteca externa necessária. Usa apenas a biblioteca padrão do Python.
+## Banco de Dados
 
-🛠️ Tecnologias
+A tabela `alunos` possui os seguintes campos:
 
-Python 3
-SQLite3
+| Campo | Tipo                |
+| ----- | ------------------- |
+| id    | INTEGER PRIMARY KEY |
+| nome  | TEXT                |
+| idade | INTEGER             |
+| plano | TEXT                |
+
+## Funcionalidades do Sistema
+
+### Cadastrar Aluno
+
+Permite inserir um novo aluno no banco de dados informando:
+
+* Nome
+* Idade
+* Plano
+
+### Listar Alunos
+
+Exibe todos os alunos cadastrados no sistema.
+
+### Buscar Aluno
+
+Realiza uma consulta pelo nome do aluno e exibe seus dados.
+
+### Atualizar Cadastro
+
+Permite alterar:
+
+* Nome
+* Idade
+* Plano
+
+de um aluno existente através do ID.
+
+### Excluir Aluno
+
+Remove um aluno do banco de dados utilizando seu ID.
+
+## Como Executar
+
+1. Clone o repositório:
+
+```bash
+git clone https://github.com/Maickon0709/Gerenciador-de-alunos.git
+```
+
+2. Acesse a pasta do projeto:
+
+```bash
+cd Gerenciador-de-alunos
+```
+
+3. Execute o arquivo principal:
+
+```bash
+python menu.py
+```
+
+## Objetivo do Projeto
+
+Este projeto foi desenvolvido com fins de aprendizado, praticando conceitos de:
+
+* CRUD (Create, Read, Update e Delete)
+* Banco de Dados SQLite
+* Modularização em Python
+* Funções
+* Manipulação de dados utilizando SQL
+
+## Autor
+
+Maickon H.
+Estudante de Análise e Desenvolvimento de Sistemas.
