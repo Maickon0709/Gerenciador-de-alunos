@@ -5,8 +5,9 @@ while True:
     print("1 - Cadastrar aluno")
     print("2 - Listar alunos")
     print("3 - Buscar aluno")
-    print("4 - Remover aluno")
-    print("5 - Sair do programa")
+    print("3 - Atualizar Cadrasto")
+    print("5 - Remover aluno")
+    print("6 - Sair do programa")
 
     op = input("Escolha: ")
 
@@ -20,9 +21,12 @@ while True:
         buscar_aluno()
 
     elif op == "4":
-        deletar_aluno()
+        atualizar_cadrasto()
 
     elif op == "5":
+        deletar_aluno()
+
+    elif op == "6":
         print("Saindo...")
         break
 
