@@ -56,6 +56,29 @@ def buscar_aluno():
 
     conexao.close()
 
+def atualizar_cadastro():
+    conexao, cursor = conectar()
+
+    listar_alunos()
+    id_aluno = int(input("Digite o ID do aluno:"))
+    novo_nome = input("Nome novo: ")
+    nova_idade = int(input("Idade nova: "))
+    novo_plano = input("Novo plano: ")
+
+    cursor.execute(
+        """
+        UPDATE alunos
+        SET NOME = ?, idade = ?, plano = ?
+        WHERE id = ?
+        """,
+        (novo_nome, nova_idade, novo_plano, id_aluno)
+    )
+
+    conexao.commit()
+    conexao.close()
+
+    print("Cadrastro atualizado com sucesso! ")
+
 
 def deletar_aluno():
     conexao, cursor = conectar()
