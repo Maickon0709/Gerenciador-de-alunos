@@ -1,11 +1,11 @@
-from alunos import cadastrar_aluno, listar_alunos, deletar_aluno, buscar_aluno
+from alunos import cadastrar_aluno, listar_alunos, deletar_aluno, buscar_aluno, atualizar_cadastro
 
 while True:
     print("\n--- ACADEMIA ---")
     print("1 - Cadastrar aluno")
     print("2 - Listar alunos")
     print("3 - Buscar aluno")
-    print("3 - Atualizar Cadrasto")
+    print("4 - Atualizar Cadastro")
     print("5 - Remover aluno")
     print("6 - Sair do programa")
 
@@ -21,7 +21,7 @@ while True:
         buscar_aluno()
 
     elif op == "4":
-        atualizar_cadrasto()
+        atualizar_cadastro()
 
     elif op == "5":
         deletar_aluno()

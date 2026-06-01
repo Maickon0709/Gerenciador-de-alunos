@@ -77,7 +77,7 @@ def atualizar_cadastro():
     conexao.commit()
     conexao.close()
 
-    print("Cadrastro atualizado com sucesso! ")
+    print("Cadastro atualizado com sucesso! ")
 
 
 def deletar_aluno():
