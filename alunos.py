@@ -6,10 +6,11 @@ def cadastrar_aluno():
     nome = input("Nome: ")
     idade = int(input("Idade: "))
     plano = input("Plano: ")
+    cpf = input("CPf: ")
 
     cursor.execute(
-        "INSERT INTO alunos (nome, idade, plano) VALUES (%s, %s, %s)",
-        (nome, idade, plano)
+        "INSERT INTO alunos (nome, idade, plano, cpf) VALUES (%s, %s, %s, %s)",
+        (nome, idade, plano, cpf)
     )
 
     conexao.commit()
@@ -25,7 +26,7 @@ def listar_alunos():
 
     print("\n--- LISTA DE ALUNOS ---")
     for aluno in alunos:
-        print(f"ID: {aluno[0]}")
+        print(f"cpf: {aluno[0]}")
         print(f"Nome: {aluno[1]}")
         print(f"Idade: {aluno[2]}")
         print(f"Plano: {aluno[3]}")
@@ -46,8 +47,8 @@ def buscar_aluno():
 
     if alunos:
         for aluno in alunos:
-            id, nome, idade, plano = aluno
-            print(f"\ncpf: {cpf}")
+            cpf, nome, idade, plano = aluno
+            print(f"\nCPF: {cpf}")
             print(f"Nome: {nome}")
             print(f"Idade: {idade}")
             print(f"Plano: {plano}")
