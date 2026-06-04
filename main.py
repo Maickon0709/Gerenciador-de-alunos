@@ -2,12 +2,12 @@ from alunos import cadastrar_aluno, listar_alunos, deletar_aluno, buscar_aluno, 
 
 while True:
     print("\n------- ACADEMIA -------")
-    print("1 - | Cadastrar aluno    |")
-    print("2 - | Listar alunos      |")
-    print("3 - | Buscar aluno       |")
-    print("4 - | Atualizar Cadastro |")
-    print("5 - | Remover aluno      |")
-    print("6 - | Sair do programa   |")
+    print("| 1 -  Cadastrar aluno    |")
+    print("| 2 -  Listar alunos      |")
+    print("| 3 -  Buscar aluno       |")
+    print("| 4 -  Atualizar Cadastro |")
+    print("| 5 -  Remover aluno      |")
+    print("| 6 -  Sair do programa   |")
     print("\n------- ACADEMIA -------")
 
     op = input("Escolha: ")
