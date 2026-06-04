@@ -1,106 +1,50 @@
 # Gerenciador de Alunos
 
-Sistema simples de gerenciamento de alunos desenvolvido em Python utilizando SQLite para armazenamento de dados.
+Sistema simples de gerenciamento de alunos desenvolvido em Python com MySQL para armazenamento de dados.
 
 ## Funcionalidades
 
-* Cadastrar alunos
-* Listar todos os alunos cadastrados
-* Buscar aluno pelo nome
-* Atualizar cadastro de alunos
-* Excluir alunos do banco de dados
+- Cadastrar alunos
+- Listar todos os alunos cadastrados
+- Buscar aluno pelo nome
+- Atualizar cadastro de alunos
+- Excluir alunos do banco de dados
 
 ## Tecnologias Utilizadas
 
-* Python 3
-* SQLite3
+- Python 3
+- MySQL 8.0
+- mysql-connector-python
+- python-dotenv
 
 ## Estrutura do Projeto
-
-```text
-Gerenciador-de-alunos/
-│
-├── banco.py
-├── alunos.py
-├── menu.py
-├── academia.db
-└── README.md
-```
+Gerenciador de alunos/ │ ├── banco.py ├── alunos.py ├── main.py ├── .env ← não sobe pro GitHub (contém credenciais) ├── .gitignore └── README.md
 
 ## Banco de Dados
 
 A tabela `alunos` possui os seguintes campos:
 
-| Campo | Tipo                |
-| ----- | ------------------- |
-| id    | INTEGER PRIMARY KEY |
-| nome  | TEXT                |
-| idade | INTEGER             |
-| plano | TEXT                |
-
-## Funcionalidades do Sistema
-
-### Cadastrar Aluno
-
-Permite inserir um novo aluno no banco de dados informando:
-
-* Nome
-* Idade
-* Plano
-
-### Listar Alunos
-
-Exibe todos os alunos cadastrados no sistema.
-
-### Buscar Aluno
-
-Realiza uma consulta pelo nome do aluno e exibe seus dados.
-
-### Atualizar Cadastro
-
-Permite alterar:
-
-* Nome
-* Idade
-* Plano
-
-de um aluno existente através do ID.
-
-### Excluir Aluno
-
-Remove um aluno do banco de dados utilizando seu ID.
+| Campo | Tipo         |
+|-------|--------------|
+| id    | INT (PK, AI) |
+| nome  | VARCHAR(50)  |
+| idade | TINYINT      |
+| plano | VARCHAR(10)  |
 
 ## Como Executar
 
 1. Clone o repositório:
-
-```bash
 git clone https://github.com/Maickon0709/Gerenciador-de-alunos.git
-```
 
-2. Acesse a pasta do projeto:
+2. Instale as dependências:
+pip install mysql-connector-python python-dotenv
 
-```bash
-cd Gerenciador-de-alunos
-```
+3. Crie o arquivo `.env` na raiz do projeto:
+DB_HOST=localhost DB_USER=root DB_PASSWORD=sua_senha DB_NAME=gerenciador_alunos
 
-3. Execute o arquivo principal:
-
-```bash
-python menu.py
-```
-
-## Objetivo do Projeto
-
-Este projeto foi desenvolvido com fins de aprendizado, praticando conceitos de:
-
-* CRUD (Create, Read, Update e Delete)
-* Banco de Dados SQLite
-* Modularização em Python
-* Funções
-* Manipulação de dados utilizando SQL
+4. Execute:
+python main.py
 
 ## Autor
 
-Maickon H.
-Estudante de Análise e Desenvolvimento de Sistemas.
+Maickon H. — Estudante de Análise e Desenvolvimento de Sistemas.
