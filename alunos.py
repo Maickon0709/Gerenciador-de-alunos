@@ -8,7 +8,7 @@ def cadastrar_aluno():
     plano = input("Plano: ")
 
     cursor.execute(
-        "INSERT INTO alunos (nome, idade, plano) VALUES (?, ?, ?)",
+        "INSERT INTO alunos (nome, idade, plano) VALUES (%s, %s, %s)",
         (nome, idade, plano)
     )
 
@@ -39,7 +39,7 @@ def buscar_aluno():
 
     nome = input("Digite o nome do aluno: ")
     cursor.execute(
-        "SELECT * FROM alunos WHERE nome = ?",
+        "SELECT * FROM alunos WHERE nome = %s",
         (nome,)
     )
     alunos = cursor.fetchall()
@@ -68,8 +68,8 @@ def atualizar_cadastro():
     cursor.execute(
         """
         UPDATE alunos
-        SET NOME = ?, idade = ?, plano = ?
-        WHERE id = ?
+        SET NOME = %s, idade = %s, plano = %s
+        WHERE id = %s
         """,
         (novo_nome, nova_idade, novo_plano, id_aluno)
     )
@@ -87,7 +87,7 @@ def deletar_aluno():
     id_aluno = int(input("Digite o ID do aluno: "))
 
     cursor.execute(
-        "DELETE FROM alunos WHERE id = ?",
+        "DELETE FROM alunos WHERE id = %s",
         (id_aluno,)
     )
 
