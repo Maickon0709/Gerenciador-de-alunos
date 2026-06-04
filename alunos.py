@@ -37,17 +37,17 @@ def listar_alunos():
 def buscar_aluno():
     conexao, cursor = conectar()
 
-    nome = input("Digite o nome do aluno: ")
+    id_aluno = input("Digite o cpf do aluno: ")
     cursor.execute(
-        "SELECT * FROM alunos WHERE nome = %s",
-        (nome,)
+        "SELECT * FROM alunos WHERE cpf = %s",
+        (id_aluno,)
     )
     alunos = cursor.fetchall()
 
     if alunos:
         for aluno in alunos:
             id, nome, idade, plano = aluno
-            print(f"\nID: {id}")
+            print(f"\ncpf: {cpf}")
             print(f"Nome: {nome}")
             print(f"Idade: {idade}")
             print(f"Plano: {plano}")
@@ -60,7 +60,7 @@ def atualizar_cadastro():
     conexao, cursor = conectar()
 
     listar_alunos()
-    id_aluno = int(input("Digite o ID do aluno:"))
+    cpf_aluno = int(input("Digite o cpf do aluno:"))
     novo_nome = input("Nome novo: ")
     nova_idade = int(input("Idade nova: "))
     novo_plano = input("Novo plano: ")
@@ -69,9 +69,9 @@ def atualizar_cadastro():
         """
         UPDATE alunos
         SET NOME = %s, idade = %s, plano = %s
-        WHERE id = %s
+        WHERE cpf = %s
         """,
-        (novo_nome, nova_idade, novo_plano, id_aluno)
+        (novo_nome, nova_idade, novo_plano, cpf_aluno)
     )
 
     conexao.commit()
@@ -84,11 +84,11 @@ def deletar_aluno():
     conexao, cursor = conectar()
 
     listar_alunos()
-    id_aluno = int(input("Digite o ID do aluno: "))
+    cpf_aluno = int(input("Digite o cpf do aluno: "))
 
     cursor.execute(
-        "DELETE FROM alunos WHERE id = %s",
-        (id_aluno,)
+        "DELETE FROM alunos WHERE cpf = %s",
+        (cpf_aluno,)
     )
 
     conexao.commit()
