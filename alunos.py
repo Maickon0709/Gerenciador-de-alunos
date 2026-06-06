@@ -5,12 +5,11 @@ def cadastrar_aluno():
 
     nome = input("Nome: ")
     idade = int(input("Idade: "))
-    plano = input("Plano: ")
     cpf = input("CPf: ")
 
     cursor.execute(
-        "INSERT INTO alunos (nome, idade, plano, cpf) VALUES (%s, %s, %s, %s)",
-        (nome, idade, plano, cpf)
+        "INSERT INTO alunos (nome, idade, cpf) VALUES (%s, %s, %s)",
+        (nome, idade, cpf)
     )
 
     conexao.commit()
@@ -29,7 +28,6 @@ def listar_alunos():
         print(f"cpf: {aluno[0]}")
         print(f"Nome: {aluno[1]}")
         print(f"Idade: {aluno[2]}")
-        print(f"Plano: {aluno[3]}")
         print("-" * 20)
 
     conexao.close()
@@ -51,7 +49,6 @@ def buscar_aluno():
             print(f"\nCPF: {cpf}")
             print(f"Nome: {nome}")
             print(f"Idade: {idade}")
-            print(f"Plano: {plano}")
     else:
         print("Aluno não encontrado")
 
@@ -64,15 +61,13 @@ def atualizar_cadastro():
     cpf_aluno = int(input("Digite o cpf do aluno:"))
     novo_nome = input("Nome novo: ")
     nova_idade = int(input("Idade nova: "))
-    novo_plano = input("Novo plano: ")
 
     cursor.execute(
         """
         UPDATE alunos
-        SET NOME = %s, idade = %s, plano = %s
-        WHERE cpf = %s
+        SET NOME = %s, idade = %s WHERE cpf = %s
         """,
-        (novo_nome, nova_idade, novo_plano, cpf_aluno)
+        (novo_nome, nova_idade, cpf_aluno)
     )
 
     conexao.commit()
