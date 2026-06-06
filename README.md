@@ -6,7 +6,7 @@ Sistema simples de gerenciamento de alunos desenvolvido em Python com MySQL para
 
 - Cadastrar alunos
 - Listar todos os alunos cadastrados
-- Buscar aluno pelo nome
+- Buscar aluno pelo cpf
 - Atualizar cadastro de alunos
 - Excluir alunos do banco de dados
 
@@ -26,7 +26,7 @@ A tabela `alunos` possui os seguintes campos:
 
 | Campo | Tipo         |
 |-------|--------------|
-| id    | INT (PK, AI) |
+| CPF   | INT (PK, AI) |
 | nome  | VARCHAR(50)  |
 | idade | TINYINT      |
 
