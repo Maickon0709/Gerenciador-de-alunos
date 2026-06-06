@@ -29,7 +29,6 @@ A tabela `alunos` possui os seguintes campos:
 | id    | INT (PK, AI) |
 | nome  | VARCHAR(50)  |
 | idade | TINYINT      |
-| plano | VARCHAR(10)  |
 
 ## Como Executar
 
