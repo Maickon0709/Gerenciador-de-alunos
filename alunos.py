@@ -6,7 +6,7 @@ def cadastrar_aluno():
     nome = input("Nome: ")
     idade = int(input("Idade: "))
     cpf = input("CPf: ")
-
+9
     cursor.execute(
         "INSERT INTO alunos (nome, idade, cpf) VALUES (%s, %s, %s)",
         (nome, idade, cpf)
